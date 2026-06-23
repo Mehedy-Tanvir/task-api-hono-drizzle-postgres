@@ -8,7 +8,7 @@ app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
-app.get("/error", (c) => {
+app.get("/error", () => {
   throw new Error("Intentional error");
 });
 

@@ -8,6 +8,10 @@ app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
+app.get("/error", (c) => {
+  throw new Error("Intentional error");
+});
+
 serve({
   fetch: app.fetch,
   port: env.PORT,

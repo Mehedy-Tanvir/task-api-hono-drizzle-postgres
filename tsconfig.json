@@ -3,7 +3,7 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "rootDir": "./src",
+    "rootDir": ".",
     "module": "NodeNext",
     "types": [
       "node"

@@ -6,7 +6,6 @@ const EnvSchema = z.object({
   DATABASE_URL: z.string(),
 });
 
-// eslint-disable-next-line node/no-process-env
-const env = EnvSchema.parse(process.env);
+const env = EnvSchema.parse((globalThis as any).process?.env ?? {});
 
 export default env;

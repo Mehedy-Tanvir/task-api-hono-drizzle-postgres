@@ -2,17 +2,13 @@ import { serve } from "@hono/node-server";
 import { createApp } from "./app";
 import env from "./env";
 import { configureApiDoc } from "./middlewares/configure-api-doc";
+import indexRoute from "./routes/index";
 
 const app = createApp();
 configureApiDoc(app);
+const routes = [indexRoute];
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
-
-app.get("/error", () => {
-  throw new Error("Intentional error");
-});
+routes.forEach(route => app.route("/", route));
 
 serve({
   fetch: app.fetch,

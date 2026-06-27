@@ -1,4 +1,5 @@
 import { boolean, pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { createSelectSchema } from "drizzle-zod";
 
 export const taskTable = pgTable("task", {
   id: uuid().defaultRandom().primaryKey().notNull(),
@@ -8,3 +9,5 @@ export const taskTable = pgTable("task", {
   createdAt: timestamp().defaultNow().notNull(),
   updatedAt: timestamp().defaultNow().notNull().$onUpdate(() => new Date()),
 });
+
+export const selectTaskSchema = createSelectSchema(taskTable);

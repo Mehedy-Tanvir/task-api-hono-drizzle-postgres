@@ -3,10 +3,11 @@ import { createApp } from "./app";
 import env from "./env";
 import { configureApiDoc } from "./middlewares/configure-api-doc";
 import indexRoute from "./routes/index.route";
+import task from "./routes/task/task.index";
 
 const app = createApp();
 configureApiDoc(app);
-const routes = [indexRoute];
+const routes = [indexRoute, task];
 
 routes.forEach(route => app.route("/", route));
 

@@ -1,7 +1,9 @@
 import { createRoute } from "@hono/zod-openapi";
 import * as z from "zod";
 import { selectTaskSchema } from "../../db/schema";
+import * as HttpsStatus from "../../helpers/https-status";
 import { jsonContent } from "../../helpers/json-content";
+import { IdParams } from "../../helpers/schema";
 
 const tags = ["Tasks"];
 
@@ -10,7 +12,7 @@ export const allTasks = createRoute({
   method: "get",
   path: "/task",
   responses: {
-    200: jsonContent(z.array(selectTaskSchema), "All Tasks list"),
+    [HttpsStatus.OK]: jsonContent(z.array(selectTaskSchema), "All Tasks list"),
   },
 });
 
@@ -18,8 +20,11 @@ export const getSingle = createRoute({
   tags,
   method: "get",
   path: "/task/{id}",
+  request: { params: IdParams,
+  },
   responses: {
-    200: jsonContent(selectTaskSchema, "The selected task"),
+    [HttpsStatus.OK]: jsonContent(selectTaskSchema, "The selected task"),
   },
 });
 export type AllTasks = typeof allTasks;
+export type GetSingle = typeof getSingle;

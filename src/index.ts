@@ -2,7 +2,7 @@ import { serve } from "@hono/node-server";
 import { createApp } from "./app";
 import env from "./env";
 import { configureApiDoc } from "./middlewares/configure-api-doc";
-import indexRoute from "./routes/index";
+import indexRoute from "./routes/index.route";
 
 const app = createApp();
 configureApiDoc(app);

@@ -14,4 +14,12 @@ export const allTasks = createRoute({
   },
 });
 
+export const getSingle = createRoute({
+  tags,
+  method: "get",
+  path: "/task/{id}",
+  responses: {
+    200: jsonContent(selectTaskSchema, "The selected task"),
+  },
+});
 export type AllTasks = typeof allTasks;

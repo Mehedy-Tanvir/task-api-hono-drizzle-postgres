@@ -1,13 +1,15 @@
-import { createRoute, z } from "@hono/zod-openapi";
+import { createRoute } from "@hono/zod-openapi";
 import { createRouter } from "../app";
+import * as HttpsStatus from "../helpers/https-status";
 import { jsonContent } from "../helpers/json-content";
+import { rootRequestSchema } from "../helpers/schema";
 
 const indexRoute = createRoute({
   tags: ["Root"],
   method: "get",
   path: "/",
   responses: {
-    200: jsonContent(z.object({ status: z.string(), message: z.string() }).openapi({ example: { status: "OK", message: "Index Route Worked!" } }), "Index Route"),
+    [HttpsStatus.OK]: jsonContent(rootRequestSchema, "The Task API Running!"),
   },
 });
 

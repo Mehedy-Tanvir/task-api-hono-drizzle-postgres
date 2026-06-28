@@ -1,6 +1,6 @@
 import { createRoute } from "@hono/zod-openapi";
 import * as z from "zod";
-import { insertSchema, selectTaskSchema } from "../../db/schema";
+import { insertSchema, selectTaskSchema, updateSchema } from "../../db/schema";
 import * as HttpsStatus from "../../helpers/https-status";
 import { jsonContent } from "../../helpers/json-content";
 import { jsonRequiredContent } from "../../helpers/json-required-content";
@@ -42,6 +42,23 @@ export const createTask = createRoute({
 
   },
 });
+
+export const updateTask = createRoute({
+  tags,
+  method: "put",
+  path: "/task/{id}",
+  request: {
+    params: IdParams,
+    body: jsonRequiredContent(updateSchema, "The task updated"),
+  },
+
+  responses: {
+    [HttpsStatus.OK]: jsonContent(selectTaskSchema, "The task updated successfully"),
+    [HttpsStatus.NOT_FOUND]: jsonContent(NotFoundSchema, "Task not found"),
+
+  },
+});
 export type AllTasks = typeof allTasks;
 export type GetSingle = typeof getSingle;
 export type CreateTask = typeof createTask;
+export type UpdateTask = typeof updateTask;

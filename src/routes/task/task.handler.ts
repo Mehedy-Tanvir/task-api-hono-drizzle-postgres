@@ -1,5 +1,6 @@
 import type { AppHandler } from "../../types";
-import type { AllTasks, CreateTask, GetSingle } from "./task.routes";
+import type { AllTasks, CreateTask, GetSingle, UpdateTask } from "./task.routes";
+import { eq } from "drizzle-orm";
 import db from "../../db";
 import { taskTable } from "../../db/schema";
 
@@ -26,4 +27,21 @@ export const createTask: AppHandler<CreateTask> = async (c) => {
   const [createdTask] = await db.insert(taskTable).values(task).returning();
 
   return c.json(createdTask, 201);
+};
+
+export const updateTask: AppHandler<UpdateTask> = async (c) => {
+  const { id } = c.req.valid("param");
+  const data = c.req.valid("json");
+
+  const task = await db.query.taskTable.findFirst({
+    where: (taskTable, { eq }) => eq(taskTable.id, id),
+  });
+
+  if (!task) {
+    return c.json({ status: "Failed", message: "Task not found" }, 404);
+  }
+
+  const [updatedTask] = await db.update(taskTable).set(data).where(eq(taskTable.id, id)).returning();
+
+  return c.json(updatedTask, 200);
 };

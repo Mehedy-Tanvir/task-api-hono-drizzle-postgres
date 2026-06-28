@@ -6,6 +6,7 @@ const task = createRouter()
   .openapi(routes.allTasks, handler.getAll)
   .openapi(routes.getSingle, handler.getOne)
   .openapi(routes.createTask, handler.createTask)
-  .openapi(routes.updateTask, handler.updateTask);
+  .openapi(routes.updateTask, handler.updateTask)
+  .openapi(routes.deleteTask, handler.deleteTask);
 
 export default task;

@@ -59,7 +59,21 @@ export const updateTask = createRoute({
 
   },
 });
+export const deleteTask = createRoute({
+  tags,
+  method: "delete",
+  path: "/task/{id}",
+  request: { params: IdParams,
+  },
+
+  responses: {
+    [HttpsStatus.OK]: jsonContent(selectTaskSchema, "The task deleted successfully"),
+    [HttpsStatus.NOT_FOUND]: jsonContent(NotFoundSchema, "Task not found"),
+
+  },
+});
 export type AllTasks = typeof allTasks;
 export type GetSingle = typeof getSingle;
 export type CreateTask = typeof createTask;
 export type UpdateTask = typeof updateTask;
+export type DeleteTask = typeof deleteTask;

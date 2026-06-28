@@ -32,6 +32,9 @@ export const createTask: AppHandler<CreateTask> = async (c) => {
 export const updateTask: AppHandler<UpdateTask> = async (c) => {
   const { id } = c.req.valid("param");
   const data = c.req.valid("json");
+  if (Object.values(data).length === 0) {
+    return c.json({ status: "Failed", message: "name or done property required" }, 400);
+  }
 
   const task = await db.query.taskTable.findFirst({
     where: (taskTable, { eq }) => eq(taskTable.id, id),

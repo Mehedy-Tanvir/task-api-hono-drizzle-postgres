@@ -4,7 +4,7 @@ import { insertSchema, selectTaskSchema, updateSchema } from "../../db/schema";
 import * as HttpsStatus from "../../helpers/https-status";
 import { jsonContent } from "../../helpers/json-content";
 import { jsonRequiredContent } from "../../helpers/json-required-content";
-import { IdParams, NotFoundSchema } from "../../helpers/schema";
+import { BadRequestSchema, IdParams, NotFoundSchema } from "../../helpers/schema";
 
 const tags = ["Tasks"];
 
@@ -55,6 +55,7 @@ export const updateTask = createRoute({
   responses: {
     [HttpsStatus.OK]: jsonContent(selectTaskSchema, "The task updated successfully"),
     [HttpsStatus.NOT_FOUND]: jsonContent(NotFoundSchema, "Task not found"),
+    [HttpsStatus.BAD_REQUEST]: jsonContent(BadRequestSchema, "The task update failed"),
 
   },
 });

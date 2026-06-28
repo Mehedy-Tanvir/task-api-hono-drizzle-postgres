@@ -7,13 +7,19 @@ import task from "./routes/task/task.index";
 
 const app = createApp();
 configureApiDoc(app);
-const routes = [indexRoute, task];
 
+const routes = [indexRoute, task];
 routes.forEach(route => app.route("/", route));
 
-serve({
-  fetch: app.fetch,
-  port: env.PORT,
-}, (info) => {
-  console.warn(`Server is running on http://localhost:${info.port}`);
-});
+// Local development only
+if (env.NODE_ENV !== "production") {
+  serve({
+    fetch: app.fetch,
+    port: env.PORT,
+  }, (info) => {
+    console.warn(`Server is running on http://localhost:${info.port}`);
+  });
+}
+
+// Vercel needs this
+export default app;

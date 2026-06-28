@@ -1,6 +1,7 @@
 import type { AppHandler } from "../../types";
-import type { AllTasks, GetSingle } from "./task.routes";
+import type { AllTasks, CreateTask, GetSingle } from "./task.routes";
 import db from "../../db";
+import { taskTable } from "../../db/schema";
 
 export const getAll: AppHandler<AllTasks> = async (c) => {
   const tasks = await db.query.taskTable.findMany();
@@ -18,4 +19,11 @@ export const getOne: AppHandler<GetSingle> = async (c) => {
   }
 
   return c.json(task, 200);
+};
+
+export const createTask: AppHandler<CreateTask> = async (c) => {
+  const task = c.req.valid("json");
+  const [createdTask] = await db.insert(taskTable).values(task).returning();
+
+  return c.json(createdTask, 201);
 };

@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "vercel:dev": "pnpm run build && vercel dev",
-    "build": "tsc && tsc-alias",
+    "build": "tsc",
     "start": "node ./dist/src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

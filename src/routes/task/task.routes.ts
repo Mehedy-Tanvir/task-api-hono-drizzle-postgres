@@ -67,7 +67,10 @@ export const deleteTask = createRoute({
   },
 
   responses: {
-    [HttpsStatus.OK]: jsonContent(selectTaskSchema, "The task deleted successfully"),
+    [HttpsStatus.OK]: jsonContent(z.object({
+      status: z.string(),
+      id: z.string().uuid(),
+    }), "The task deleted successfully"),
     [HttpsStatus.NOT_FOUND]: jsonContent(NotFoundSchema, "Task not found"),
 
   },

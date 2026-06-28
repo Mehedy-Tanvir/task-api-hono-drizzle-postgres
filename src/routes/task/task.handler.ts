@@ -62,5 +62,5 @@ export const deleteTask: AppHandler<DeleteTask> = async (c) => {
 
   const [deletedTask] = await db.delete(taskTable).where(eq(taskTable.id, id)).returning();
 
-  return c.json(deletedTask, 200);
+  return c.json({ id: deletedTask.id, status: "Success" }, 200);
 };

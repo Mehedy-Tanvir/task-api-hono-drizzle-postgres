@@ -1,6 +1,6 @@
 {
   "name": "task-api-hono-drizzle-postgres",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "vercel:dev": "pnpm run build && vercel dev",

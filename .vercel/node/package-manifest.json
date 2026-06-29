@@ -13,7 +13,7 @@
         "prod"
       ],
       "requested": "^9.0.0",
-      "resolved": "9.0.0"
+      "resolved": "9.1.0"
     },
     {
       "name": "@hono/node-server",
@@ -49,7 +49,7 @@
         "prod"
       ],
       "requested": "^0.11.5",
-      "resolved": "0.11.5"
+      "resolved": "0.11.6"
     },
     {
       "name": "@types/node",
@@ -97,13 +97,22 @@
       "resolved": "0.8.3"
     },
     {
+      "name": "esbuild",
+      "type": "direct",
+      "scopes": [
+        "prod"
+      ],
+      "requested": "^0.28.1",
+      "resolved": "0.28.1"
+    },
+    {
       "name": "eslint",
       "type": "direct",
       "scopes": [
         "prod"
       ],
       "requested": "^10.3.0",
-      "resolved": "10.5.0"
+      "resolved": "10.6.0"
     },
     {
       "name": "eslint-plugin-format",
@@ -174,7 +183,7 @@
       "scopes": [
         "prod"
       ],
-      "requested": "^4.4.3",
+      "requested": "4.4.3",
       "resolved": "4.4.3"
     },
     {
@@ -279,7 +288,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.4.1"
+      "resolved": "0.5.1"
     },
     {
       "name": "@es-joy/jsdoccomment",
@@ -287,7 +296,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.86.0"
+      "resolved": "0.87.0"
     },
     {
       "name": "@es-joy/resolve.exports",
@@ -839,7 +848,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.2.5"
+      "resolved": "0.2.6"
     },
     {
       "name": "@scalar/helpers",
@@ -847,7 +856,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.8.2"
+      "resolved": "0.9.0"
     },
     {
       "name": "@scalar/schemas",
@@ -855,7 +864,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.6.0"
+      "resolved": "0.7.0"
     },
     {
       "name": "@scalar/types",
@@ -863,7 +872,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "0.15.0"
+      "resolved": "0.16.0"
     },
     {
       "name": "@scalar/validation",
@@ -1063,7 +1072,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.5.38"
+      "resolved": "3.5.39"
     },
     {
       "name": "@vue/compiler-dom",
@@ -1071,7 +1080,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.5.38"
+      "resolved": "3.5.39"
     },
     {
       "name": "@vue/compiler-sfc",
@@ -1079,7 +1088,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.5.38"
+      "resolved": "3.5.39"
     },
     {
       "name": "@vue/compiler-ssr",
@@ -1087,7 +1096,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.5.38"
+      "resolved": "3.5.39"
     },
     {
       "name": "@vue/shared",
@@ -1095,7 +1104,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.5.38"
+      "resolved": "3.5.39"
     },
     {
       "name": "acorn",
@@ -1159,7 +1168,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "2.10.38"
+      "resolved": "2.10.40"
     },
     {
       "name": "boolbase",
@@ -1199,7 +1208,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "5.2.0"
+      "resolved": "5.3.0"
     },
     {
       "name": "cac",
@@ -1248,14 +1257,6 @@
         "prod"
       ],
       "resolved": "4.4.0"
-    },
-    {
-      "name": "clean-regexp",
-      "type": "transitive",
-      "scopes": [
-        "prod"
-      ],
-      "resolved": "1.0.0"
     },
     {
       "name": "colorette",
@@ -1362,6 +1363,14 @@
       "resolved": "2.0.3"
     },
     {
+      "name": "detect-indent",
+      "type": "transitive",
+      "scopes": [
+        "prod"
+      ],
+      "resolved": "7.0.2"
+    },
+    {
       "name": "devlop",
       "type": "transitive",
       "scopes": [
@@ -1383,7 +1392,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "1.5.377"
+      "resolved": "1.5.380"
     },
     {
       "name": "empathic",
@@ -1407,7 +1416,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "5.24.0"
+      "resolved": "5.24.1"
     },
     {
       "name": "entities",
@@ -1416,14 +1425,6 @@
         "prod"
       ],
       "resolved": "7.0.1"
-    },
-    {
-      "name": "esbuild",
-      "type": "transitive",
-      "scopes": [
-        "prod"
-      ],
-      "resolved": "0.28.1"
     },
     {
       "name": "escalade",
@@ -1535,7 +1536,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "62.9.0"
+      "resolved": "63.0.10"
     },
     {
       "name": "eslint-plugin-jsonc",
@@ -1551,7 +1552,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "18.1.0"
+      "resolved": "18.2.1"
     },
     {
       "name": "eslint-plugin-no-only-tests",
@@ -1583,7 +1584,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.1.0"
+      "resolved": "3.1.1"
     },
     {
       "name": "eslint-plugin-toml",
@@ -1599,7 +1600,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "64.0.0"
+      "resolved": "68.0.0"
     },
     {
       "name": "eslint-plugin-unused-imports",
@@ -1623,7 +1624,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.4.0"
+      "resolved": "3.5.0"
     },
     {
       "name": "eslint-processor-vue-blocks",
@@ -2487,7 +2488,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "5.1.15"
+      "resolved": "5.1.16"
     },
     {
       "name": "natural-compare",
@@ -2511,7 +2512,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "2.0.48"
+      "resolved": "2.0.50"
     },
     {
       "name": "nth-check",
@@ -2711,7 +2712,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "8.5.15"
+      "resolved": "8.5.16"
     },
     {
       "name": "postcss-selector-parser",
@@ -2735,7 +2736,7 @@
       "scopes": [
         "prod"
       ],
-      "resolved": "3.8.4"
+      "resolved": "3.9.1"
     },
     {
       "name": "prettier-linter-helpers",
@@ -2808,14 +2809,6 @@
         "prod"
       ],
       "resolved": "0.7.1"
-    },
-    {
-      "name": "regexp-tree",
-      "type": "transitive",
-      "scopes": [
-        "prod"
-      ],
-      "resolved": "0.1.27"
     },
     {
       "name": "regjsparser",

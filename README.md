@@ -146,25 +146,35 @@ The server will start on `http://localhost:3000` with hot-reload via `tsx watch`
 
 ---
 
+## 🌐 Live Demo
+
+The API is deployed and live at:
+
+**[https://task-api-hono-drizzle-postgres.vercel.app/reference](https://task-api-hono-drizzle-postgres.vercel.app/reference)**
+
+Explore the interactive API documentation, test endpoints, and view the full OpenAPI spec directly in your browser.
+
+---
+
 ## 🔗 API Endpoints & Documentation
 
 Once the server is running, you can explore the API interactively:
 
-| Resource | URL | Description |
-| :--- | :--- | :--- |
-| API Docs (JSON) | `http://localhost:3000/doc` | Raw OpenAPI 3.0 specification |
-| API Reference (UI) | `http://localhost:3000/reference` | Interactive Scalar documentation |
-| Health Check | `GET /` | Returns API status |
-| Tasks | `GET /task` | List all tasks |
-| Tasks | `GET /task/{id}` | Get a single task by UUID |
-| Tasks | `POST /task` | Create a new task |
-| Tasks | `PUT /task/{id}` | Update an existing task |
-| Tasks | `DELETE /task/{id}` | Delete a task |
+| Resource | Local URL | Live URL | Description |
+| :--- | :--- | :--- | :--- |
+| API Docs (JSON) | `http://localhost:3000/doc` | `https://task-api-hono-drizzle-postgres.vercel.app/doc` | Raw OpenAPI 3.0 specification |
+| API Reference (UI) | `http://localhost:3000/reference` | `https://task-api-hono-drizzle-postgres.vercel.app/reference` | Interactive Scalar documentation |
+| Health Check | `GET /` | `GET /` | Returns API status |
+| Tasks | `GET /task` | `GET /task` | List all tasks |
+| Tasks | `GET /task/{id}` | `GET /task/{id}` | Get a single task by UUID |
+| Tasks | `POST /task` | `POST /task` | Create a new task |
+| Tasks | `PUT /task/{id}` | `PUT /task/{id}` | Update an existing task |
+| Tasks | `DELETE /task/{id}` | `DELETE /task/{id}` | Delete a task |
 
 ### Example Request (Create Task)
 
 ```bash
-curl -X POST http://localhost:3000/task \
+curl -X POST https://task-api-hono-drizzle-postgres.vercel.app/task \
   -H "Content-Type: application/json" \
   -d '{"name": "Build a REST API", "done": false}'
 ```
